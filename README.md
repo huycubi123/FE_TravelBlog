@@ -1,3 +1,4 @@
+```
 scss/
 │
 ├── abstracts/     # (1) Biến, function, mixin, placeholder
@@ -7,6 +8,6 @@ scss/
 ├── pages/         # (5) Style riêng cho từng page
 │
 └── main.scss      # (6) File trung tâm import tất cả
-
+```
 
 Code ở trong scss này sẽ được convert sang css tại main.css
