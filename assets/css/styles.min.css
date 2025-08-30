@@ -16041,6 +16041,7 @@ ul {
   color: var(--bs-body-color);
 }
 .comment-footer .action-icons a:hover, .comment-footer .action-icons a.active {
+  
   color: var(--bs-info);
 }
 
