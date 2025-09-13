@@ -1,0 +1,113 @@
+.footer {
+    background: #fffbea; // nền vàng nhạt
+    padding: 50px 0 20px;
+
+    h5 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #000;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 8px;
+
+            a {
+                text-decoration: none;
+                color: #333;
+                font-size: 14px;
+
+                &:hover {
+                    color: #ff5722;
+                }
+            }
+        }
+    }
+
+    .newsletter {
+        input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        button {
+            background: #ff5722;
+            border: none;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+
+            &:hover {
+                background: #e64a19;
+            }
+        }
+    }
+
+    .social {
+        h6 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 8px; 
+
+            a {
+                display: flex; 
+                justify-content: center;
+                align-items: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: #000;
+                color: #fff;
+                font-size: 16px;
+                text-decoration: none;
+                transition: 0.3s ease;
+
+                &:hover {
+                    background: #ff5722;
+                }
+            }
+        }
+    }
+
+    .region {
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        select {
+            font-size: 14px;
+            border-radius: 6px;
+            padding: 6px 10px;
+        }
+    }
+
+    hr {
+        margin: 30px 0 15px;
+        border-color: #ddd;
+    }
+
+    .copy {
+        font-size: 13px;
+        color: #666;
+    }
+}

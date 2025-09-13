@@ -1116,4 +1116,150 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Syne", sans-serif;
 }
 
+.header {
+  background: #fffbea;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.header .logo img {
+  width: 28px;
+  height: 28px;
+}
+.header .logo span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.header .nav ul li {
+  margin-left: 40px;
+}
+.header .nav ul li:first-child {
+  margin-left: 0;
+}
+.header .nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+.header .nav ul li a:hover {
+  color: #ff5722;
+}
+.header .auth .login {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+.header .auth .login:hover {
+  color: #ff5722;
+}
+.header .auth .signup {
+  background: #ff5722;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.header .auth .signup:hover {
+  background: #e64a19;
+}
+
+.footer {
+  background: #fffbea;
+  padding: 50px 0 20px;
+}
+.footer h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #000;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer ul li {
+  margin-bottom: 8px;
+}
+.footer ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+.footer ul li a:hover {
+  color: #ff5722;
+}
+.footer .newsletter input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-size: 14px;
+}
+.footer .newsletter button {
+  background: #ff5722;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.footer .newsletter button:hover {
+  background: #e64a19;
+}
+.footer .social h6 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.footer .social .icons {
+  display: flex;
+  gap: 8px;
+}
+.footer .social .icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.footer .social .icons a:hover {
+  background: #ff5722;
+}
+.footer .region label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+.footer .region select {
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+.footer hr {
+  margin: 30px 0 15px;
+  border-color: #ddd;
+}
+.footer .copy {
+  font-size: 13px;
+  color: #666;
+}
+
 /*# sourceMappingURL=main.css.map */

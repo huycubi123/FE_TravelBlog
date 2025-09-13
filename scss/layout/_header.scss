@@ -1,0 +1,72 @@
+.header {
+    background: #fffbea;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    .logo {
+        img {
+            width: 28px;
+            height: 28px;
+        }
+
+        span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+
+    .nav {
+        ul {
+            li {
+                margin-left: 40px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #333;
+                    font-size: 16px;
+                    font-weight: 400;
+
+                    &:hover {
+                        color: #ff5722;
+                    }
+                }
+            }
+        }
+    }
+
+    .auth {
+        .login {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+
+            &:hover {
+                color: #ff5722;
+            }
+        }
+
+        .signup {
+            background: #ff5722;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+
+            &:hover {
+                background: #e64a19;
+            }
+        }
+    }
+}
