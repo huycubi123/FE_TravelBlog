@@ -1,0 +1,53 @@
+.btn{
+    --search-btn-bg:#FFC200;
+
+    color: #FFF;
+    text-align: center;
+    width: 160px;
+
+    font-family: Manrope;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.67; /* 166.667% */
+    border-radius: 60px;
+    background: var(--orange-primary, #FF5B26);
+    
+    &-grad {background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
+    &-grad {
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 42px;
+        display: block;
+    }
+
+    &-grad:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+         
+
+    &__search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        background-color: var(--search-btn-bg);
+        border-radius: 50%;
+        transition: 0.5s;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    &:hover{
+        background-color: #FFC200;
+    }
+}

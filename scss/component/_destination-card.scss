@@ -1,0 +1,52 @@
+.destination{
+    &-card{
+        position: relative;
+        cursor: pointer;
+    }
+    
+    &__img{
+        width: 370px;
+        height: 430px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    &__info{
+        position: absolute;
+        left: 5%;
+        bottom: 5%;
+        width: 330px;
+        height: 128px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 20px 90px 0 rgba(25, 27, 29, 0.10);
+    }
+    &__address{
+        color: #4E5358;     
+        font-size: 1.6rem;    
+        line-height: 1.75; /* 175% */
+        margin-bottom: 4px;
+    }
+    &__heading{
+        color: #191B1D;
+        font-family: Syne;
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 1.27; /* 127.273% */
+        margin-bottom: 4px;
+    }
+    &__rate{
+        display: flex;
+        align-items: center;
+        gap: 4px; 
+        color:  #191B1D;
+        font-family: Manrope;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.71; /* 171.429% */
+    }
+}
+.col:has(.destination-card) {
+  display: flex;
+  justify-content: center;
+}

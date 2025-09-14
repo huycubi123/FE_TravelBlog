@@ -1,24 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <!-- Font Heading Syne  -->
+    <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css" />
+    <!-- Font Manrope -->
+    <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-  <link rel="shortcut icon" href="../favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="../favicon/site.webmanifest" />
-  <!-- Font Heading Syne  -->
-  <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css">
-  <!-- Font Manrope -->
-  <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../assets/css/main.css">
-</head>
+    <!-- JS -->
+    <script src="../assets/js/scripts.js"></script>
+  </head>
 
-<body></body>
+  <body>
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "../template/header.html");
+    </script>
 
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="row">
+            <div class="col-6">
+              <div class="hero__media">
+                <figure class="hero__img-wrap">
+                  <img
+                    src="../assets/images/destination/hero_img.png"
+                    alt=""
+                    class="hero__img"
+                  />
+                  <span class="hero__label">
+                    <img src="../assets/images/destination/decor.svg" alt="" />
+                    1000+ Destinations Listed</span
+                  >
+                </figure>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero__content">
+                <h1 class="hero__heading">
+                  A World of
+                  <img
+                    src="../assets/images/destination/laban.png"
+                    alt=""
+                    class="hero__heading-decor"
+                  />
+                  Destinations
+                </h1>
+                <p class="section-desc hero__desc">
+                  Discover the world with local experts, one tailor-made trip at
+                  a time. One planet. Endless possibilities. The most amazing
+                  destinations in the world are waiting for you.
+                </p>
+                <img src="../assets/images/destination/mouse.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../assets/images/destination/Map.png"
+        alt=""
+        class="hero__decor"
+      />
+    </section>
+    <section class="list">
+      <div class="container">
+        <span class="section-desc list__desc"
+          >We have more than 1000+ destinations you can choose</span
+        >
+        <form action="" class="list__form" method="get">
+          <div class="list__form-search-box">
+            <div class="list__form-search-box-left">
+              <img
+                src="../assets/images/destination/decor.svg"
+                alt=""
+                class="list__form-search-box-decor"
+              />
+              <input
+                type="text"
+                class="list__form-input"
+                placeholder="Search Destination"
+                required
+              />
+            </div>
+            <div class="list__form-search-box-right">
+              <button class="btn btn__search">
+                <img src="../assets/images/destination/search.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </form>
+        <nav class="list__nav">
+          <div class="list__nav-item">
+            <input
+              type="radio"
+              name="tab"
+              id="popular"
+              class="list__nav-input"
+              checked
+            />
+            <label for="popular" class="list__nav-label">Popular</label>
+          </div>
+          <div class="list__nav-item">
+            <input
+              type="radio"
+              name="tab"
+              id="region"
+              class="list__nav-input"
+            />
+            <label for="region" class="list__nav-label">Regions</label>
+          </div>
+          <div class="list__nav-item">
+            <input
+              type="radio"
+              name="tab"
+              id="country"
+              class="list__nav-input"
+            />
+            <label for="country" class="list__nav-label">Countries</label>
+          </div>
+          <div class="list__nav-item">
+            <input type="radio" name="tab" id="city" class="list__nav-input" />
+            <label for="city" class="list__nav-label">Cities</label>
+          </div>
+        </nav>
+        <div class="row row-cols-xl-3 gy-3 gx-0">
+          <!-- Col 1  -->
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/Vietnam.jpg"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City/Asia</p>
+                <h3 class="destination__heading">VietNam</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Col 2  -->
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/VietNam (2).jpg"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City/Asia</p>
+                <h3 class="destination__heading">Hue, VietNam</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Col 3  -->
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/Bali.jpg"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City/Asia</p>
+                <h3 class="destination__heading">Bali, Indonesia</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/newyork.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City/America</p>
+                <h3 class="destination__heading">New York, USA</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/India.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City/Asia</p>
+                <h3 class="destination__heading">New Delhi, India</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/egypt.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City/Middle East</p>
+                <h3 class="destination__heading">Cairo, Egypt</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/new zealand.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">Country/Australia</p>
+                <h3 class="destination__heading">New Zealand</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/france.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">Country</p>
+                <h3 class="destination__heading">Paris, France</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/pakistan.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">Country</p>
+                <h3 class="destination__heading">Pakistan</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/new zealand.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">Country</p>
+                <h3 class="destination__heading">New Zealand</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/france.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City</p>
+                <h3 class="destination__heading">Paris, France</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/saudiarabia.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">Country</p>
+                <h3 class="destination__heading">Saudi Arabia</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/bangkok.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City</p>
+                <h3 class="destination__heading">Bangkok, Thailand</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/turkey.png"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">Country</p>
+                <h3 class="destination__heading">Turkey</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#!" class="destination-card">
+              <img
+                src="../assets/images/destination/Bali.jpg"
+                alt=""
+                class="destination__img"
+              />
+              <div class="destination__info">
+                <p class="destination__address">City/Asia</p>
+                <h3 class="destination__heading">Bali, Indonesia</h3>
+                <div class="destination__rate">
+                  <img
+                    src="../assets/images/destination/star.svg"
+                    alt=""
+                    class="descoration__rate-star"
+                  />
+                  <span>5.0 Ratings</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <button class="btn-grad list__btn">Load More</button>
+      </div>
+    </section>
+    <footer id="footer" class="footer"></footer>
+    <script>
+      load("#footer", "../template/footer.html");
+    </script>
+  </body>
 </html>
