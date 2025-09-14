@@ -1170,6 +1170,10 @@ h1, h2, h3, h4, h5, h6 {
 .destination-card {
   position: relative;
   cursor: pointer;
+  transition: 0.5s;
+}
+.destination-card:hover {
+  scale: 1.2;
 }
 .destination__img {
   width: 370px;
@@ -1463,6 +1467,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.6rem;
   line-height: 1.75;
   color: var(--color);
+  width: 500px;
 }
 .list__form-input::placeholder {
   font-size: 1.6rem;
