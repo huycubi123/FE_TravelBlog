@@ -1124,11 +1124,15 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   width: 160px;
   font-family: Manrope;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.67; /* 166.667% */
   border-radius: 60px;
   background: var(--orange-primary, #FF5B26);
+}
+.btn__signup {
+  padding: 8px 24px;
+  width: 107px;
 }
 .btn-grad {
   background-image: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%);
@@ -1164,7 +1168,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.8;
 }
 .btn:hover {
-  background-color: #FFC200;
+  opacity: 0.8;
 }
 
 .destination-card {
@@ -1232,6 +1236,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   z-index: 1000;
 }
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .header .logo img {
   width: 28px;
   height: 28px;
@@ -1249,12 +1258,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header .nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #4E5358;
   font-size: 16px;
   font-weight: 400;
+  line-height: 1.75;
 }
 .header .nav ul li a:hover {
   color: #ff5722;
+}
+.header .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  padding-top: 12px;
+}
+.header .auth {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-top: 8px;
 }
 .header .auth .login {
   font-size: 14px;
@@ -1263,17 +1285,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header .auth .login:hover {
   color: #ff5722;
-}
-.header .auth .signup {
-  background: #ff5722;
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.header .auth .signup:hover {
-  background: #e64a19;
 }
 
 .footer {

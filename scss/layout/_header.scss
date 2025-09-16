@@ -9,6 +9,11 @@
     width: 100%;
     z-index: 1000;
 
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     .logo {
         img {
             width: 28px;
@@ -33,9 +38,10 @@
 
                 a {
                     text-decoration: none;
-                    color: #333;
+                    color: #4E5358;
                     font-size: 16px;
                     font-weight: 400;
+                    line-height: 1.75;
 
                     &:hover {
                         color: #ff5722;
@@ -43,10 +49,21 @@
                 }
             }
         }
+        &-list{
+            display: flex;
+            align-items: center;
+            gap: 42px;
+            padding-top: 12px;
+        }
     }
 
     .auth {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-top: 8px;
         .login {
+            
             font-size: 14px;
             color: #333;
             text-decoration: none;
@@ -56,17 +73,5 @@
             }
         }
 
-        .signup {
-            background: #ff5722;
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-
-            &:hover {
-                background: #e64a19;
-            }
-        }
     }
 }
