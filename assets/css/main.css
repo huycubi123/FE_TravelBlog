@@ -1787,8 +1787,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 700px;
   margin: 0 auto;
 }
-
-.form-group {
+.suggestion-form__group {
   margin-bottom: 24px;
 }
 
@@ -1807,7 +1806,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.6rem;
   border: 1px solid #dee2e6;
   border-radius: 8px;
-  background-color: #f8f9fa;
+  background-color: white;
+  color: #000000;
   transition: border-color 0.3s ease;
 }
 .form-control:focus, .form-select:focus {
@@ -1834,7 +1834,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f8f9fa;
   transition: all 0.3s ease;
   cursor: pointer;
-  padding: 0;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .file-drop-area:hover {
   border-color: #ff5b26;
@@ -1894,7 +1895,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-submit {
-  width: 100%;
+  width: 35%;
   padding: 16px;
   font-family: "Manrope", sans-serif;
   font-size: 1.8rem;
@@ -1905,6 +1906,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 99px;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  display: block;
 }
 .btn-submit:hover {
   opacity: 0.9;
@@ -1927,11 +1929,26 @@ h1, h2, h3, h4, h5, h6 {
   .suggestion-form {
     padding: 20px;
   }
-  .btn-upload, .btn-submit {
+  .btn-upload {
     padding: 12px;
     font-size: 1.6rem;
   }
+  .btn-submit {
+    padding: 12px;
+    font-size: 1.6rem;
+    width: 60%;
+  }
 }
+.file-name-display {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.6rem;
+  color: #000000;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 15px;
+  word-break: break-all;
+}
+
 .signin {
   padding-top: 158px;
   padding-bottom: 70px;
@@ -2307,7 +2324,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   margin: 0 auto 80px;
-  max-width: 600px;
+  max-width: 700px;
 }
 .faq-page__body {
   display: flex;

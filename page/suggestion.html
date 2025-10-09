@@ -33,22 +33,22 @@
     <section class="container">
       <h1 class="suggestion-page__heading">Submit a request</h1>
       <form class="suggestion-form">
-        <div class="form-group">
+        <div class="suggestion-form__group">
           <label for="name" class="form-label">Your name</label>
           <input type="text" id="name" class="form-control" value="Quốc Minh">
         </div>
 
-        <div class="form-group">
+        <div class="suggestion-form__group">
           <label for="email" class="form-label">Your email address</label>
           <input type="email" id="email" class="form-control">
         </div>
 
-        <div class="form-group">
+        <div class="suggestion-form__group">
           <label for="phone" class="form-label">Your phone number</label>
           <input type="tel" id="phone" class="form-control">
         </div>
 
-        <div class="form-group">
+        <div class="suggestion-form__group">
           <label for="feedback-type" class="form-label">I'd like to...</label>
           <select id="feedback-type" class="form-select">
             <option>Give Feedback</option>
@@ -58,7 +58,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="suggestion-form__group">
           <label for="feedback-regarding" class="form-label">What is your feedback regarding?</label>
           <select id="feedback-regarding" class="form-select">
             <option>Other Feedback</option>
@@ -69,20 +69,28 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="suggestion-form__group">
           <label for="inquiry" class="form-label">Submit your inquiry here</label>
           <textarea id="inquiry" class="form-control" rows="6"></textarea>
         </div>
 
-        <div class="form-group">
+        <div class="suggestion-form__group">
           <label class="form-label">Ad files or drop files here</label>
           <button type="button" class="file-drop-area">
             <i class="fa-solid fa-cloud-arrow-up file-drop-area__icon"></i>
           </button>
         </div>
+        
+        <div class="suggestion-form__group">
+          <label for="file-upload" class="form-label">Add files or drop files here</label>
+          <input type="file" id="file-upload" multiple hidden>
+          <button type="button" class="file-drop-area" id="file-drop-area">
+            <i class="fa-solid fa-cloud-arrow-up file-drop-area__icon"></i>
+          </button>
+          <div id="file-preview" class="file-preview-container"></div>
+        </div>
 
         <p class="form-text-divider">Or you can</p>
-
         <div class="upload-group">
           <button type="button" class="btn-upload">
             <span>Upload from Google Drive</span>
@@ -97,7 +105,6 @@
             <i class="fa-solid fa-cloud btn-upload__icon--onedrive"></i>
           </button>
         </div>
-
         <button type="submit" class="btn btn-submit">Submit Your Request</button>
       </form>
     </section>
