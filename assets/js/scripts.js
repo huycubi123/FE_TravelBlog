@@ -103,7 +103,7 @@ function initJsToggle() {
 
 
 // --- Xử lý Drag & Drop và Upload file ---
-document.addEventListener('DOMContentLoaded', () => {
+function initFileDrop() {
     const dropArea = document.getElementById('file-drop-area');
     const fileInput = document.getElementById('file-upload');
     const filePreview = document.getElementById('file-preview');
@@ -192,6 +192,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
   }
-});
-
-
+};

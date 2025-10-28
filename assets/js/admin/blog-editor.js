@@ -87,7 +87,7 @@ async function loadCategories() {
   const res = await callApi({
     url: apiCategory,
     method: "POST",
-    data: { ignorePagination: true },
+    data: JSON.stringify({ ignorePagination: true }),
     token: token,
   });
 
@@ -130,7 +130,7 @@ async function loadCountries() {
   const res = await callApi({
     url: countryApi,
     method: "POST",
-    data: { ignorePagination: true },
+    data: JSON.stringify({ ignorePagination: true }),
     token: token,
   });
 
@@ -146,14 +146,13 @@ async function loadDestinationsByCountry(id) {
   const url = destinationApi.replace("{id}", id);
   const res = await callApi({
     url: url,
-    method: "POST",
-    data: { ignorePagination: true },
+    method: "GET",
     token: token,
   });
 
   const select = $("#destinationSelect");
   select.empty().append('<option value="">-- Select Destination --</option>');
-  res.result.data.forEach((destination) => {
+  res.result.result.forEach((destination) => {
     select.append(`<option value="${destination.id}">${destination.name}</option>`);
   });
 }

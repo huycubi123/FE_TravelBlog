@@ -36,7 +36,7 @@ async function renderBlogDetail(blog) {
 
   await Promise.all([
     getAuthor(blog.authorId),
-    getDestination(blog.destinationId),
+    // getDestination(blog.destinationId),
     getThumbnail(blog.thumbnailId),
   ]);
 
@@ -51,7 +51,7 @@ async function getDestination(id) {
 }
 
 async function getThumbnail(id) {
-  const response = await uploadFileApi({
+  const response = await callApi({
     url: fileStorageApi + id,
   })
   const fullPath =
