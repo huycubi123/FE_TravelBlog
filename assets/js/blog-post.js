@@ -33,21 +33,14 @@ async function renderBlogDetail(blog) {
   jq(".blog-detail__title").text(blog.title);
   jq(".blog-detail__date").text(new Date(blog.createdOn).toLocaleDateString());
   jq(".blog-detail__time-read").text(blog.timeRead);
+  jq(".blog-detail__destination").text(blog.destination.name);
 
   await Promise.all([
     getAuthor(blog.authorId),
-    // getDestination(blog.destinationId),
     getThumbnail(blog.thumbnailId),
   ]);
 
   renderBlogContent(blog.content);
-}
-
-async function getDestination(id) {
-  const response = await callApi({
-    url: destinationApi + id,
-  });
-  jq(".blog-detail__destination").text(response.result.name);
 }
 
 async function getThumbnail(id) {
