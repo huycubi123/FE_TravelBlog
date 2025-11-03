@@ -43,34 +43,7 @@ function load(selector, path) {
       window.dispatchEvent(new Event("template-loaded"));
     });
 }
-/**
- * Khởi tạo logic cho accordion trên trang FAQ
- */
-function initFaqAccordion() {
-  const faqAccordion = document.querySelector("#faq-accordion");
-  if (!faqAccordion) return;  // Chỉ chạy nếu đang ở trang FAQ
-  const items = faqAccordion.querySelectorAll(".faq-accordion__item");
-  items.forEach(item => {
-    const question = item.querySelector(".faq-accordion__question");
-    question.addEventListener("click", () => {
-      const isActive = item.classList.contains("faq-accordion__item--active");
-      items.forEach(otherItem => {
-        if (otherItem !== item) {
-          otherItem.classList.remove("faq-accordion__item--active");
-        }
-      });
-      if (!isActive) {
-        item.classList.add("faq-accordion__item--active");
-      }
-    });
-  });
-}
-// Lắng nghe sự kiện trang được tải để chạy logic accordion
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initFaqAccordion);
-} else {
-  initFaqAccordion();
-}
+
 // Resposive Header
 /**
  * JS toggle
@@ -103,7 +76,7 @@ function initJsToggle() {
 
 
 // --- Xử lý Drag & Drop và Upload file ---
-document.addEventListener('DOMContentLoaded', () => {
+function initFileDrop() {
     const dropArea = document.getElementById('file-drop-area');
     const fileInput = document.getElementById('file-upload');
     const filePreview = document.getElementById('file-preview');
@@ -192,6 +165,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
   }
-});
-
-
+};
