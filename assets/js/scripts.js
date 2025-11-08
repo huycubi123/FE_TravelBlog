@@ -123,7 +123,7 @@ function initFileDrop() {
   });
 
   // Ngăn hành vi mặc định khi kéo/thả
-  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((eventName) => {
     dropArea.addEventListener(eventName, (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -143,11 +143,11 @@ function initFileDrop() {
       const fileName = file.name;
       const fileSize = (file.size / 1024).toFixed(2) + ' KB';
       dropArea.innerHTML = `
-        <span class="file-name-display">${fileName} (${fileSize})</span>
+        <span class="suggestion-form__file-name">${fileName} (${fileSize})</span>
       `;
     } else {
       dropArea.innerHTML = `
-        <span class="file-name-display">${files.length} files selected</span>
+        <span class="suggestion-form__file-name">${files.length} files selected</span>
       `;
     }
   }
@@ -155,18 +155,18 @@ function initFileDrop() {
   // (Tùy chọn) Gửi file lên server
   function uploadFilesToServer(files) {
     const formData = new FormData();
-    [...files].forEach(file => formData.append('uploaded_files[]', file));
+    [...files].forEach((file) => formData.append('uploaded_files[]', file));
 
     fetch('/api/upload', {
       method: 'POST',
       body: formData,
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log('Upload thành công:', data);
         alert('Tải file lên thành công!');
       })
-      .catch(err => {
+      .catch((err) => {
         console.error('Lỗi khi upload:', err);
         alert('Có lỗi khi tải file.');
       });
@@ -174,4 +174,37 @@ function initFileDrop() {
 }
 // Gọi hàm khi DOM load
 document.addEventListener('DOMContentLoaded', initFileDrop);
+
+// Testimonial xử lý slider
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.getElementById('testimonial-slider');
+  if (slider) { // Chỉ chạy nếu tìm thấy slider
+    const track = slider.querySelector('.testimonials__track');
+    const slides = Array.from(track.children);
+    const dotsContainer = document.getElementById('testimonial-dots');  
+      // 1. Tạo các dấu chấm
+      slides.forEach((slide, index) => {
+      const dot = document.createElement('button');
+      dot.classList.add('testimonials__dot');
+      if (index === 0) {
+        dot.classList.add('testimonials__dot--active');
+      }
+        
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        });
+        dotsContainer.appendChild(dot);
+      });
+    const dots = Array.from(dotsContainer.children);
+    // 2. Hàm di chuyển slide
+    function goToSlide(index) {
+      // Di chuyển track
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        
+      // Cập nhật active dot
+      dots.forEach(dot => dot.classList.remove('testimonials__dot--active'));
+      dots[index].classList.add('testimonials__dot--active');
+    }
+  }
+});
 

@@ -1,8 +1,8 @@
 @use "../abstracts/" as *;
 
-// Biến màu (Color variables)
+// Biến màu 
 $header-footer-bg: #fffbea; 
-$about-story-bg: #fef8e4;   // Màu vàng riêng cho "Our Story"
+$about-story-bg: #fef8e4;   
 $team-david-bg: #e6f3e9;
 $team-aaron-bg: #ffe8db;
 $team-steven-bg: #e3f0fa;
@@ -24,10 +24,9 @@ $play-btn-bg: #FFC200;
 // Section 1: Hero
 .about-hero {
     background-color: $header-footer-bg; 
-    text-align: center;
-    padding-top: 200px; 
+    text-align: center; 
     padding-bottom: 120px;
-
+    margin-top: 50px;  
     @include screen(lg) {
         padding-top: 180px;
         padding-bottom: 100px;
@@ -39,6 +38,7 @@ $play-btn-bg: #FFC200;
 
     &__icon {
         margin-bottom: 30px;
+        object-fit: cover;
     }
 
     &__heading {
@@ -61,7 +61,6 @@ $play-btn-bg: #FFC200;
 // Section 2: Our Story 
 .about-story {
     background-color:#fff3d4;; 
-    // --- DEFAULT (DESKTOP) STYLES ---
     &__heading {
         font-family: 'Syne', sans-serif;
         font-size: 4.8rem;
@@ -71,15 +70,10 @@ $play-btn-bg: #FFC200;
         margin-bottom: 30px;
         padding-left: 100px;
     }
-    
-    &__image-wrapper {
-        max-width: 300px; 
-        margin: 80px ; // Canh trái (desktop)
-    }
-
     &__image {
         max-width: 100%;
         padding-left:200px ;
+        object-fit: cover;
     }
     
     &__content {
@@ -102,7 +96,6 @@ $play-btn-bg: #FFC200;
         padding-bottom: 80px;
     }
 
-    // --- MOBILE OVERRIDES ---
     @include screen(md) {
         text-align: center;
         &__heading {
@@ -123,97 +116,81 @@ $play-btn-bg: #FFC200;
             padding-right: 0;
             padding-bottom: 40px;
     }
+    }
 }
 
-}
+// Section 3: Why Us 
+.why-us {
+    margin-left: 80px;
+    background-color: #fff; 
 
-// Section 3: Meet the Team
-.about-team {
-    background-color: $header-footer-bg; 
+    @include screen(md) {
+        .col-md-6:last-child {
+            text-align: center;
+        }
+    &__list {
+        padding-left: 0; 
+        align-items: center; 
+    }
+    margin: 0;   
+    }
 
-    &__heading {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 60px; 
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start; 
+        gap: 24px; 
+        padding: 24px;
+        border-radius: 20px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+        &--highlighted {
+            background-color: #fff;
+            // Tạo bóng mờ
+            box-shadow: 0 10px 40px rgba(8, 85, 162, 0.05); 
+            padding-left: 100px;
+        }
+    }
+
+    &__icon {
+        width: 64px; 
+        height: 64px;
+        flex-shrink: 0; 
+        object-fit: cover;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__title {
         font-family: 'Syne', sans-serif;
-        font-size: 4.8rem;
+        font-size: 2.2rem;
         font-weight: 600;
         color: var(--font-color, #191B1D);
-        text-align: center;
-        margin-bottom: 60px;
+        margin: 0 0 8px 0; 
     }
-    
-    .team-member {
-        text-align: center;
-        &__name {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--font-color, #191B1D);
-            margin: 0;
-            margin-top: 24px; 
+
+    &__desc {
+        font-size: 1.6rem;
+        color: var(--desc-color, #4E5358);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    &__main {
+
+        @include screen(lg) {
+            padding-left: 15px; 
         }
-    }
-    .team-card {
-        padding: 20px; 
-        border-radius: 16px;
-        &__image {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            display: block; 
-        }
-
-    }
-}
-
-// Section 4: Diversity Vision
-.about-diversity {
-    background-color: $header-footer-bg; 
-
-    &__media {
-        position: relative;
-        max-width: 470px; 
-        margin: 0 auto; 
-
         @include screen(md) {
-            margin-bottom: 40px;
-        }
-    }
-
-    &__image {
-        width: 100%;
-        height: auto;
-        border-radius: 50%;
-        display: block;
-    }
-
-    &__play-btn {
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-        width: 70px;
-        height: 70px;
-        background-color: $play-btn-bg;
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-
-        &::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            border-left: 20px solid var(--font-color, #191B1D);
-            margin-left: 5px; 
+            padding-left: 0; 
+            margin-top: 40px; 
         }
     }
 
@@ -224,29 +201,146 @@ $play-btn-bg: #FFC200;
         line-height: 1.2;
         color: var(--font-color, #191B1D);
         margin-bottom: 24px;
+
+        @include screen(sm) {
+            font-size: 3.8rem;
+        }
     }
-    &__desc {
+
+    &__text {
         font-size: 1.8rem;
         color: var(--desc-color, #4E5358);
         line-height: 1.67;
+        margin-bottom: 30px;
+        max-width: 470px ; 
         
-        + .about-diversity__desc {
-            margin-top: 16px;
+        @include screen(md) {
+            max-width: 100%; 
         }
-        padding-right: 40px;
     }
+
+}
+
+// Section 4: Testimonials 
+.testimonials {
+    background-color: white; 
+    padding: 120px 0;
+    overflow: hidden; 
+
     @include screen(md) {
+        padding: 80px 15px;
+    }
+
+    .container {
+        position: relative; 
+    }
+
+    &__map {
+        position: absolute;
+        z-index: 1; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        width: 100%; 
+        height: auto;
+        opacity: 0.8; 
+        pointer-events: none; 
+
+    }
+
+    &__content {
+        position: relative; 
+        z-index: 2; 
+    }
+
+    &__heading {
+        font-family: 'Syne', sans-serif;
+        font-size: 4.8rem;
+        font-weight: 600;
+        color: var(--font-color, #191B1D);
+        margin-bottom: 50px;
+        text-align: center; 
+
+        @include screen(sm) {
+            font-size: 3.8rem;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__track {
+        display: flex;
+        transition: transform 0.5s ease-in-out; 
+    }
+
+    &__slide {
+        flex: 0 0 100%; 
+        width: 100%;
+        box-sizing: border-box; 
         text-align: center;
-        &__desc {
-            padding-right: 0;
-            text-align: center;
+        padding: 20px;
+    }
+    
+    &__quote {
+        font-family: 'Syne', sans-serif;
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--font-color, #191B1D);
+        margin: 0 auto;
+        font-style: normal;
+        max-width: 750px;
+        @include screen(sm) {
+            font-size: 2.2rem;
+        }
+    } 
+    &__author {
+        display: block;
+        font-family: 'Syne', sans-serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(--font-color, #191B1D);
+        margin-top: 30px;
+        font-style: normal;
+    }
+
+    &__role {
+        display: block;
+        font-size: 1.6rem;
+        color: var(--desc-color, #4E5358);
+        line-height: 1.7;
+        margin-top: 4px;
+    }
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px; 
+        margin-top: 40px;
+    }
+
+    &__dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ccc; 
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &--active {
+            background-color: var(--main-color, #ff5b26); 
         }
     }
 }
+
 // Section 5: Our Mission
 .about-mission {
     background-color: $header-footer-bg; 
-
     &__heading {
         font-family: 'Syne', sans-serif;
         font-size: 4.8rem;
@@ -263,7 +357,7 @@ $play-btn-bg: #FFC200;
         max-width: 500px;
         margin: 16px auto 60px;
     }
-    .mission-card {
+    .about-mission-card {
         background-color: #fff; 
         border: 1px solid #f0f0f0; 
         border-radius: 12px;
@@ -275,9 +369,10 @@ $play-btn-bg: #FFC200;
         flex-direction: column;
         align-items: center;
         &__icon {
-            height: 80px;
-            width: 100px;
+            height: 64px;
+            width: 64px;
             margin-bottom: 30px;
+            object-fit: cover;
         }
         &__title {
             font-family: 'Syne', sans-serif;
@@ -298,9 +393,10 @@ $play-btn-bg: #FFC200;
             transition: transform 0.3s ease;
             
             img {
-                width: 100px; 
+                width: 44px;
+                height: 44px; 
+                object-fit: cover;
             }
-
             &:hover {
                 transform: scale(1.1);
             }

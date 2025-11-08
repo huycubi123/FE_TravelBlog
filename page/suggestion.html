@@ -5,22 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suggestion</title>
     <link rel="stylesheet" href="../assets/css/main.css" />
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="../favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
     <link rel="shortcut icon" href="../favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../favicon/apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
     <link rel="manifest" href="../favicon/site.webmanifest" />
-    <!-- Font Manrope -->
     <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
     <link
       rel="stylesheet"
@@ -30,9 +19,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-
   <body></body>
-
   <body>
     <header id="header" class="header"></header>
 
@@ -41,28 +28,25 @@
         <h1 class="suggestion-page__heading">Submit a request</h1>
         <form class="suggestion-form">
           <div class="suggestion-form__group">
-            <label for="name" class="form-label">Your name</label>
-            <input
-              type="text"
-              id="name"
-              class="form-control"
-              value="Quốc Minh"
-            />
+            <label for="name" class="suggestion-form__label">Your name</label>
+            <input type="text" id="name" class="suggestion-form__control" value="" />
           </div>
 
           <div class="suggestion-form__group">
-            <label for="email" class="form-label">Your email address</label>
-            <input type="email" id="email" class="form-control" />
+            <label for="email" class="suggestion-form__label"
+              >Your email address</label
+            >
+            <input type="email" id="email" class="suggestion-form__control" />
           </div>
 
           <div class="suggestion-form__group">
-            <label for="phone" class="form-label">Your phone number</label>
-            <input type="tel" id="phone" class="form-control" />
+            <label for="phone" class="suggestion-form__label">Your phone number</label>
+            <input type="tel" id="phone" class="suggestion-form__control" />
           </div>
 
           <div class="suggestion-form__group">
-            <label for="feedback-type" class="form-label">I'd like to...</label>
-            <select id="feedback-type" class="form-select">
+            <label for="feedback-type" class="suggestion-form__label">I'd like to...</label>
+            <select id="feedback-type" class="suggestion-form__select">
               <option>Give Feedback</option>
               <option>Ask a Question</option>
               <option>Report a Bug</option>
@@ -71,10 +55,8 @@
           </div>
 
           <div class="suggestion-form__group">
-            <label for="feedback-regarding" class="form-label"
-              >What is your feedback regarding?</label
-            >
-            <select id="feedback-regarding" class="form-select">
+            <label for="feedback-regarding" class="suggestion-form__label">What is your feedback regarding?</label>
+            <select id="feedback-regarding" class="suggestion-form__select">
               <option>Other Feedback</option>
               <option>Booking</option>
               <option>Account</option>
@@ -84,39 +66,37 @@
           </div>
 
           <div class="suggestion-form__group">
-            <label for="inquiry" class="form-label"
-              >Submit your inquiry here</label
-            >
-            <textarea id="inquiry" class="form-control" rows="6"></textarea>
+            <label for="inquiry" class="suggestion-form__label">Submit your inquiry here</label>
+            <textarea id="inquiry" class="suggestion-form__control" rows="6"></textarea>
           </div>
 
           <div class="suggestion-form__group">
-            <label for="file-upload" class="form-label"
+            <label for="file-upload" class="suggestion-form__label"
               >Add files or drop files here</label
             >
             <input type="file" id="file-upload" multiple hidden />
-            <button type="button" class="file-drop-area" id="file-drop-area">
-              <i class="fa-solid fa-cloud-arrow-up file-drop-area__icon"></i>
+            <button type="button" class="suggestion-form__drop-area" id="file-drop-area">
+              <i class="fa-solid fa-cloud-arrow-up suggestion-form__drop-icon"></i>
             </button>
-            <div id="file-preview" class="file-preview-container"></div>
+            <div id="file-preview"class="suggestion-form__preview-container"></div>
           </div>
 
-          <p class="form-text-divider">Or you can</p>
-          <div class="upload-group">
-            <button type="button" class="btn-upload">
+          <p class="suggestion-form__divider">Or you can</p>
+          <div class="suggestion-form__upload-group">
+            <button type="button" class="suggestion-form__upload-btn">
               <span>Upload from Google Drive</span>
-              <i class="fa-brands fa-google-drive btn-upload__icon--google"></i>
+              <i class="fa-brands fa-google-drive suggestion-form__upload-icon--google"></i>
             </button>
-            <button type="button" class="btn-upload">
+            <button type="button" class="suggestion-form__upload-btn">
               <span>Upload from Dropbox</span>
-              <i class="fa-brands fa-dropbox btn-upload__icon--dropbox"></i>
+              <i class="fa-brands fa-dropbox suggestion-form__upload-icon--dropbox"></i>
             </button>
-            <button type="button" class="btn-upload">
+            <button type="button" class="suggestion-form__upload-btn">
               <span>Upload from Microsoft Onedrive</span>
-              <i class="fa-solid fa-cloud btn-upload__icon--onedrive"></i>
+              <i class="fa-solid fa-cloud suggestion-form__upload-icon--onedrive"></i>
             </button>
           </div>
-          <button type="submit" class="btn btn-submit">
+          <button type="submit" class="btn suggestion-form__submit">
             Submit Your Request
           </button>
         </form>
