@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="./assets/font/Manrope/stylesheet.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+
     <!-- CDN Font Awesome -->
     <link
       rel="stylesheet"
@@ -37,6 +43,25 @@
 
   <body>
     <header id="header" class="header"></header>
+
+    <!-- <div class="container" style="margin-top: 100px; min-height: 500px">
+      <main class="page">
+        <section class="location-picker container">
+          <div class="location-picker__controls">
+            <input
+              id="locationInput"
+              class="location-picker__input"
+              type="text"
+              placeholder="Destination doesn't selected yet."
+              readonly
+            />
+            <button id="btnOpenMap" class="location-picker__button">
+              <i class="fa-solid fa-map-location-dot"></i> Search Destination
+            </button>
+          </div>
+        </section>
+      </main>
+    </div> -->
 
     <section class="home-hero">
       <div class="container">
@@ -51,32 +76,31 @@
                 checking one place for your travel details and getting a heads
                 up as things happen throughout your trip
               </p>
-              <form action="" method="get" class="home-hero--search-form">
+              <div class="home-hero--search-form">
                 <div class="home-hero--search-box">
                   <div class="home-hero--search-input">
-                    <i class="fa-solid fa-location-dot"></i>
+                    <button id="btnOpenMap" style="cursor: pointer;"><i class="fa-solid fa-location-dot"></i></button>
                     <input
+                      id="locationInput"
                       type="text"
                       name="destination"
                       placeholder="Where to go?"
-                      required
+                      readonly
                     />
                   </div>
                   <div class="home-hero--search__divider"></div>
                   <div class="home-hero--search-input">
-                    <i class="fa-regular fa-calendar"></i>
                     <input
-                      type="text"
-                      name="destination"
+                      type="date"
+                      name="dateToGo"
                       placeholder="When to go?"
-                      required
                     />
                   </div>
                 </div>
-                <button class="btn home-hero--search-btn" type="submit">
+                <button id="btnSearch" class="btn home-hero--search-btn" type="submit">
                   Search
                 </button>
-              </form>
+              </div>
             </div>
           </div>
           <div class="col col-xl-5 offset-1">
@@ -714,16 +738,60 @@
               <a href="#!" class="blog-card__more">By David Warner</a>
             </div>
           </div>
-          <a href="./page/blog.html" class="btn home-blog__btn">Read All Blog</a>
+          <a href="./page/blog.html" class="btn home-blog__btn"
+            >Read All Blog</a
+          >
         </div>
       </div>
     </section>
+
+    <div id="mapModal" class="map-modal">
+      <div class="map-modal__content">
+        <h4 class="map-modal__title">Search Destinations On Maps</h4>
+
+        <input
+          id="searchBox"
+          type="text"
+          class="map-modal__search-input"
+          placeholder="Search destinations..."
+        />
+        <ul id="results" class="map-modal__results"></ul>
+
+        <div id="map" class="map-modal__map"></div>
+
+        <div class="map-modal__actions">
+          <button
+            id="btnLocate"
+            class="map-modal__button map-modal__button--locate"
+          >
+            <i class="fa-solid fa-location-crosshairs"></i> My location
+          </button>
+          <div class="map-modal__actions-right">
+            <button
+              id="btnSave"
+              class="map-modal__button map-modal__button--save"
+            >
+              <i class="fa-solid fa-check"></i> Save
+            </button>
+            <button
+              id="btnClose"
+              class="map-modal__button map-modal__button--close"
+            >
+              <i class="fa-solid fa-xmark"></i> Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer id="footer" class="footer"></footer>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="./assets/js/scripts.js"></script>
     <script>
       load("#header", "../template/header.html");
       load("#footer", "../template/footer.html");
     </script>
+    <script src="./assets/js/map-modal.js"></script>
   </body>
   <script>
     const dots = document.querySelectorAll(".home-comment__pagination-dot");
