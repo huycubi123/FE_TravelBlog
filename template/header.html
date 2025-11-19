@@ -10,7 +10,7 @@
         alt="Pathway Logo"
         class="me-2"
       />
-      <a href="../index.html">Pathway</a>
+      TravelBlogs
     </a>
 
     <!-- Menu -->
@@ -30,10 +30,23 @@
     </nav>
     <div class="nav__overlay js-toggle" toggle-target="#navbar"></div>
 
-    <!-- Auth buttons -->
     <div class="auth d-sm-none d-lg-flex">
-      <a href="../page/sign-in.html" class="login">Sign In</a>
-      <a href="../page/sign-up.html" class="btn btn__signup">Sign Up</a>
+      <div class="auth__guest">
+        <a href="../page/sign-in.html" class="login">Sign In</a>
+        <a href="../page/sign-up.html" class="btn btn__signup">Sign Up</a>
+      </div>
+
+      <div class="auth__user">
+        <div>Hello, <span class="auth__name">User Name</span></div>
+        <span class="auth__avatar"><i class="fa fa-user"></i></span>
+        <div class="auth__menu">
+          <a href="../page/my-posts.html" class="auth__link">
+            <i class="fa-solid fa-blog"></i>
+            <p>My Posts</p>
+          </a>
+          <button class="auth__logout">Log Out</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,22 +1,31 @@
+import { callApi } from "./apiHelper.js";
+
 const signinForm = document.querySelector(".signin__form");
 const signinCard = document.querySelector(".signin__card"); // card login
 const otpCard = document.getElementById("otpCard");
+let contact = "";
 
 signinForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const email = signinForm.querySelectorAll(".signin__input")[0].value;
+  contact = signinForm.querySelectorAll(".signin__input")[0].value;
   const password = signinForm.querySelectorAll(".signin__input")[1].value;
 
-  //   const res = await fetch("/api/auth/login", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ email, password }),
-  //   });
+  const res = await callApi({
+    url: "api/v1/auth/sign-in/initiate",
+    method: "POST",
+    data: JSON.stringify({
+      contact: contact,
+      password: password,
+    }),
+  });
 
-  //   const data = await res.json();
-  signinCard.classList.add("hidden");
-  otpCard.classList.remove("hidden");
+  if (res.result != null) {
+    signinCard.classList.add("hidden");
+    otpCard.classList.remove("hidden");
+  } else {
+    alert("Something went wrong!");
+  }
 });
 
 const otpItems = document.querySelectorAll(".signin__otp-item");
@@ -34,3 +43,36 @@ otpItems.forEach((input, index) => {
     }
   });
 });
+
+document
+  .getElementById("btnVerifyOtp")
+  .addEventListener("click", verfiySignIn);
+
+async function verfiySignIn() {
+  let otp = "";
+  const inputs = document.querySelectorAll(".signin__otp-item");
+
+  inputs.forEach((input) => {
+    otp += input.value;
+  });
+
+  console.log(otp);
+
+  const response = await callApi({
+    url: "api/v1/auth/sign-in/verify-otp",
+    method: "POST",
+    data: JSON.stringify({
+      contact: contact,
+      verificationCode: otp,
+    }),
+  });
+
+  const result = response.result;
+
+  if (result.user != null) {
+    localStorage.setItem("token", result.accessToken);
+    localStorage.setItem("refreshToken", result.refreshToken);
+
+    window.location.href = "../index.html";
+  }
+}

@@ -3,9 +3,9 @@ import { callApi } from "./apiHelper.js";
 const signupForm = document.querySelector(".signin__form");
 const signUp = document.querySelector(".signin__card");
 const otpCard = document.getElementById("otpCard");
-const initiateSignupApi = "api/v1/sign-up/initiate";
-const verifySignupApi = "api/v1/sign-up/verify-contact";
-const resendOtpApi = "api/v1/sign-up/resend-otp";
+const initiateSignupApi = "api/v1/auth/sign-up/initiate";
+const verifySignupApi = "api/v1/auth/sign-up/verify-contact";
+const resendOtpApi = "api/v1/auth/sign-up/resend-otp";
 var jq = jQuery.noConflict();
 
 let verificationId = "";
@@ -67,41 +67,32 @@ async function initiateSignUp() {
 
   verificationId = result.verificationId;
   contact = result.contact;
-  await verifySignUp();
-}
-
-async function verifySignUp() {
   signUp.classList.add("hidden");
   otpCard.classList.remove("hidden");
+}
 
-  document
-    .getElementById("btnVerifyOtp")
-    .addEventListener("click", function () {
-      const inputs = document.querySelectorAll(".signin__otp-item");
-      let otp = "";
+document.getElementById("btnVerifyOtp").addEventListener("click", verifySignUp);
 
-      inputs.forEach((input) => {
-        otp += input.value;
-      });
+async function verifySignUp() {
+  const inputs = document.querySelectorAll(".signin__otp-item");
+  let otp = "";
 
-      console.log(otp);
-    });
+  inputs.forEach((input) => {
+    otp += input.value;
+  });
 
   const response = await callApi({
     url: verifySignupApi,
     method: "POST",
     data: JSON.stringify({
-      firstName: firstName,
-      lastName: lastName,
-      contact: email,
-      password: password,
-      confirmPassword: confirmPassword,
+      contact: contact,
+      verificationCode: otp,
     }),
   });
 
   const result = response.result;
 
-  if (result.userId != null) {
+  if (result.user != null) {
     localStorage.setItem("token", result.accessToken);
     localStorage.setItem("refreshToken", result.refreshToken);
 
@@ -109,22 +100,20 @@ async function verifySignUp() {
   }
 }
 
-document
-  .getElementsByClassName("signin__otp-resend")
-  .addEventListener("click", async function resendOtp() {
-    const response = await callApi({
-      url: resendOtpApi,
-      method: "POST",
-      data: JSON.stringify({
-        verificationId: verificationId,
-        contact: contact,
-      }),
-    });
-
-    const result = response.result;
-
-    if (result.isSent) {
-      verificationId = result.verificationId;
-      alert("OTP is sent again! Please check your email!");
-    }
+async function resendOtp() {
+  const response = await callApi({
+    url: resendOtpApi,
+    method: "POST",
+    data: JSON.stringify({
+      verificationId: verificationId,
+      contact: contact,
+    }),
   });
+
+  const result = response.result;
+
+  if (result.isSent) {
+    verificationId = result.verificationId;
+    alert("OTP is sent again! Please check your email!");
+  }
+}

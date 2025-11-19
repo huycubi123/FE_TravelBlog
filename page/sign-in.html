@@ -83,30 +83,6 @@
                 <button class="btn btn-signin" type="submit">Sign In</button>
               </form>
 
-              <div class="signin__otp hidden" id="signinOtp">
-                <h3 class="signin__otp-heading">Enter OTP</h3>
-
-                <p class="signin__otp-desc">
-                  We've sent a verification code to your email.
-                </p>
-
-                <input
-                  type="text"
-                  class="signin__otp-input"
-                  placeholder="Enter 6-digit OTP"
-                  id="otpInput"
-                />
-
-                <button
-                  class="btn btn-signin signin__otp-btn"
-                  id="btnVerifyOtp"
-                >
-                  Verify OTP
-                </button>
-
-                <span class="signin__otp-resend">Resend OTP?</span>
-              </div>
-
               <span class="signin__link"
                 >Don’t a have account?
                 <a href="./sign-up.html" class="signin__link--strong"
@@ -133,7 +109,7 @@
                 Verify
               </button>
 
-              <span class="signin__otp-resend">Resend OTP?</span>
+              <button class="signin__otp-resend">Resend OTP?</button>
             </div>
           </div>
         </div>
@@ -145,6 +121,6 @@
     <script>
       load("#header", "../template/header.html");
     </script>
-    <script src="../assets/js/sign-in.js"></script>
+    <script type="module" src="../assets/js/sign-in.js"></script>
   </body>
 </html>

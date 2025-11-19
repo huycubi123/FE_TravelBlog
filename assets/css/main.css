@@ -3021,7 +3021,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 430px;
   padding: 30px;
   border-radius: 12px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0 20px 90px 0 rgba(25, 27, 29, 0.1);
 }
 .signin__heading {
@@ -3056,12 +3056,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   border-radius: 25px;
   border: 1px solid rgba(25, 27, 29, 0.15);
-  background: #FFF;
+  background: #fff;
   padding: 11px;
 }
 .signin__list-item:hover {
   background-color: var(--main-color);
-  color: #FFF;
+  color: #fff;
 }
 .signin__link {
   display: block;
@@ -3090,7 +3090,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 60px;
   border-radius: 30px;
   border: 1px solid rgba(25, 27, 29, 0.15);
-  background: #FFF;
+  background: #fff;
   text-align: left;
   color: var(--desc-color);
   font-size: 1.6rem;
@@ -3162,6 +3162,99 @@ h1, h2, h3, h4, h5, h6 {
 }
 .signin .hidden {
   display: none !important;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.auth__guest {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.auth__guest .login {
+  color: #333;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.auth__guest .login:hover {
+  color: #0e558b;
+}
+.auth__user {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+.auth__user .auth__avatar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
+.auth__user .auth__avatar i {
+  pointer-events: none;
+}
+.auth__user .auth__name {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.auth__user .auth__menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 150px;
+}
+.auth__user .auth__menu .auth__logout {
+  background: #e74c3c;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.auth__user .auth__menu .auth__logout:hover {
+  opacity: 0.85;
+}
+.auth__user--show-menu .auth__menu {
+  display: block !important;
+}
+.auth__link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem !important;
+  padding: 10px 10px 10px 0px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+.auth__link:hover {
+  background-color: #efefef;
+  color: #064070;
+}
+
+.auth--logged-in .auth__guest {
+  display: none;
+}
+.auth--logged-in .auth__user {
+  display: flex;
 }
 
 @keyframes fadeIn {
