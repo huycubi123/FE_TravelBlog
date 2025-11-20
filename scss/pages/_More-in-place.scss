@@ -25,7 +25,7 @@ $color-bg-hero: #fffbea;
         height: auto;
         object-fit: contain;
         z-index: 0;
-        opacity: 1; 
+        opacity: 1; // Map rõ nét
         mix-blend-mode: multiply; 
         pointer-events: none;
     }
@@ -38,7 +38,7 @@ $color-bg-hero: #fffbea;
     &__heading {
         font-family: $font-heading; 
         font-weight: 600;           
-        font-size: 7.2rem;         
+        font-size: 7.2rem;        
         line-height: 1;            
         letter-spacing: -0.02em;
         color: $color-primary;
@@ -91,7 +91,6 @@ $color-bg-hero: #fffbea;
         }
     }
 }
-
 // LIST & FILTER SECTION
 .places-list {
     padding-top: 80px;
@@ -108,10 +107,13 @@ $color-bg-hero: #fffbea;
     }
 }
 
-
+// --- FILTER RADIO LOGIC (Mới) ---
+// 1. Ẩn nút radio mặc định
 .filter-input {
     display: none;
 }
+
+// 2. Style cho Label (nút bấm)
 .btn-filter {
     font-family: $font-body;
     font-weight: 600;
@@ -131,6 +133,7 @@ $color-bg-hero: #fffbea;
     }
 }
 
+// 3. Khi Radio được Checked -> Đổi màu Label đứng ngay sau nó
 .filter-input:checked + .btn-filter {
     background-color: $color-accent;
     color: #fff;
@@ -149,7 +152,8 @@ $color-bg-hero: #fffbea;
     display: flex;
     flex-direction: column;
     transition: transform 0.5s ease;
-
+    
+    // Hover Effect: Nhấc card + Zoom ảnh
     &:hover {
         transform: translateY(-10px);
         .place-card__img {
@@ -210,7 +214,7 @@ $color-bg-hero: #fffbea;
         color: $color-primary;
         margin-bottom: 12px;
         
-    
+        // Căn chỉnh thẳng hàng
         line-height: 28px; 
         min-height: 56px; 
         
@@ -228,7 +232,7 @@ $color-bg-hero: #fffbea;
         line-height: 1.75;
         margin-bottom: 16px;
         
-        
+        // Giới hạn mô tả 2 dòng
         display: -webkit-box;
         -webkit-line-clamp: 2;
         line-clamp: 2; 
@@ -277,7 +281,8 @@ $color-bg-hero: #fffbea;
     }
 }
 
-// RESPONSIVE CONFIGURATION (lg, md, sm)
+// RESPONSIVE CONFIGURATION (lg, md, sm)=
+
 // 1. TABLET & MOBILE NGANG (Dưới 1200px)
 @media (max-width: 1199.98px) {
     .hero-places {
@@ -290,6 +295,7 @@ $color-bg-hero: #fffbea;
         }
     }
 }
+
 // 2. TABLET DỌC (Dưới 992px) - "md"
 @media (max-width: 991.98px) {
     .hero-places {
@@ -317,6 +323,7 @@ $color-bg-hero: #fffbea;
         }
     }
 
+    // Card tự co giãn theo cột grid
     .place-card {
         width: 100%; 
         height: auto; 
@@ -359,6 +366,7 @@ $color-bg-hero: #fffbea;
             }
         }
     }
+
     // --- Filter & List ---
     .places-list {
         padding-top: 30px;
